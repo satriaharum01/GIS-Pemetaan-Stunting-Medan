@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script
+			  src="https://code.jquery.com/jquery-3.6.1.js"
+			  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+			  crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- satu -->
+    <select id="region">
+        <option value="" selected>Select region</option>
+          <option value="1">Region 1</option>
+          <option value="2">Region 2</option>
+          <option value="3">Region 3</option>
+        </select>
+        
+        <select id="City">
+        <option value="">Select City</option>
+          <option value="1">City1</option>
+          <option value="1">City1</option>
+          <option value="1">City1</option>
+          <option value="2">City2</option>
+          <option value="2">City2</option>
+          <option value="3">City3</option>
+          <option value="2">City2</option>
+          <option value="3">City3</option>
+          <option value="1">City1</option>
+        </select>
+        
+        <select id="barangay">
+        <option value="">Select barangay</option>
+          <option value="city1">barangay1</option>
+          <option value="city2">barangay1city2</option>
+          <option value="city3">barangay1city3</option>
+          <option value="city3">barangay1city3</option>
+          <option value="city3">barangay1city3</option>
+          <option value="city1">barangay1city1</option>
+          <option value="city1">barangay1city1</option>
+          <option value="city1">barangay1city1</option>
+          <option value="city1">barangay1city1</option>
+        </select>
+
+
+
+
+        <!-- dua -->
+        <br>
+        <br>
+        <br>
+
+<label for="Category">Category</label>
+<select id="Category" name="Category" >
+  <option value="">Select Category</option>
+   <option value='shoes'>Championes</option>
+  <option value='shirts'>Camiseta</option>
+  <option value='sweatshirts'>sweatshirts</option>
+  <option value='others'>Otro</option>
+</select><br><br>
+
+<label for="size">Size</label>
+<select id="size" name="size">
+  <option value="">Select size</option>
+</select>
+
+    <script>
+        // satu
+        $("#region").change(function(){
+	var val=$(this).val();
+	$("#City option").hide();
+  $("#City").val("");
+	$("#City option[value='"+val+"']").show();
+  $("#City").change();
+});
+
+$("#City").change(function(){
+	var val=$(this).val();
+	$("#barangay option").hide();
+  $("#barangay").val("");
+	$("#barangay option[value='city"+val+"']").show();
+});
+
+
+
+
+// dua
+var sizeForShoes = ["40", "44", "42", "46", "50"]; 
+var sizeForDress = ["S", "M", "L", "XL", "XXL"]; 
+
+$('#Category').change(function() {
+    var selectedCategory = $('#Category').val();  
+    if(selectedCategory != ""){
+    
+   //Removing current option
+    $('#size').find('option').remove();
+
+    var sizeList = [];
+   
+   if(selectedCategory == 'shoes'){
+    for (var i = 1; i <= sizeForShoes.length; i++) {
+    var shoeSize = sizeForShoes[i];
+$('#size').append($("<option></option>").attr("value", shoeSize).text(shoeSize));
+    }
+   }
+   else{
+     for (var i = 1; i <= sizeForDress.length; i++) {
+     var dressSize = sizeForDress[i];
+        $('#size').append($("<option></option>").attr("value", dressSize).text(dressSize));
+    }
+   } 
+   }else{
+   
+   //If nothing is selected then it will remove previous options
+
+   $("#size").empty();
+    $('#size').append($("<option></option>").attr("value", "").text("Select size"));
+   }
+});
+    </script>
+</body>
+</html>

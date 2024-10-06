@@ -1,0 +1,171 @@
+<head>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+</head>
+
+<div class="container">
+  <form>
+    <h4 class="text-success">Props to the good stuff ;) </h4>
+    <div class="form-row">
+      <div class="form-group col-md-6 col-sm-6">
+        <label>Conuntries</label>
+        <select class="custom-select country" id="country">
+          <option disabled selected>Select Country </option>
+          <option dataAja="Asia" value="Afghanistan">Afghanistan</option>
+          <option dataAja="Antartica" value="Antartica">Antartica</option>
+          <option dataAja="Australia" value="Australia">Australia</option>
+          <option dataAja="Europe" value="Austria">Austria</option>
+          <option dataAja="Asia" value="Bangladesh">Bangladesh</option>
+          <option dataAja="South America" value="Brazil">Brazil</option>
+          <option dataAja="Africa" value="Cameroon">Cameroon</option>
+          <option dataAja="North America" value="Canada">Canada</option>
+          <option dataAja="South America" value="Chile">Chile</option>
+          <option dataAja="Asia" value="China">China</option>
+          <option dataAja="South America" value="Ecuador">Ecuador</option>
+          <option dataAja="Australia" value="Fiji">Fiji</option>
+          <option dataAja="North America" value="Mexico">Mexico</option>
+          <option dataAja="Australia" value="New Zealand">New Zealand</option>
+          <option dataAja="Africa" value="Nigeria">Nigeria</option>
+          <option dataAja="Europe" value="Portugal">Portugal</option>
+          <option dataAja="Africa" value="Seychelles">Seychelles</option>
+          <option dataAja="North America" value="United States">United States</option>
+          <option dataAja="Europe" value="United Kingdom">United Kingdom</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6 col-sm-6">
+        <label>Continent</label>
+        <select class="custom-select" id="continent">
+          <option disabled selected>Select Continent</option>
+          <option disabled value="Africa">Africa</option>
+          <option disabled value="Antartica">Antartica</option>
+          <option disabled value="Asia">Asia</option>
+          <option disabled value="Europe">Europe</option>
+          <option disabled value="North America">North America</option>
+          <option disabled value="Australia">Australia</option>
+          <option disabled value="South America">South America</option>
+        </select>
+      </div>
+    </div>
+  </form>
+  <hr>
+
+  <form>
+    <h4 class="text-danger"> Attributing the bad stuff to attr </h4>
+    <div class="form-row">
+      <div class="form-group col-md-6 col-sm-6">
+        <label>Conuntries</label>
+        <select class="custom-select country-2" id="country2">
+          <option disabled selected>Select Country </option>
+          <option data-origin-region="Asia" value="Afghanistan">Afghanistan</option>
+          <option data-origin-region="Antartica" value="Antartica">Antartica</option>
+          <option data-origin-region="Australia" value="Australia">Australia</option>
+          <option data-origin-region="Europe" value="Austria">Austria</option>
+          <option data-origin-region="Asia" value="Bangladesh">Bangladesh</option>
+          <option data-origin-region="South America" value="Brazil">Brazil</option>
+          <option data-origin-region="Africa" value="Cameroon">Cameroon</option>
+          <option data-origin-region="North America" value="Canada">Canada</option>
+          <option data-origin-region="South America" value="Chile">Chile</option>
+          <option data-origin-region="Asia" value="China">China</option>
+          <option data-origin-region="South America" value="Ecuador">Ecuador</option>
+          <option data-origin-region="Australia" value="Fiji">Fiji</option>
+          <option data-origin-region="North America" value="Mexico">Mexico</option>
+          <option data-origin-region="Australia" value="New Zealand">New Zealand</option>
+          <option data-origin-region="Africa" value="Nigeria">Nigeria</option>
+          <option data-origin-region="Europe" value="Portugal">Portugal</option>
+          <option data-origin-region="Africa" value="Seychelles">Seychelles</option>
+          <option data-origin-region="North America" value="United States">United States</option>
+          <option data-origin-region="Europe" value="United Kingdom">United Kingdom</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6 col-sm-6">
+        <label>Continent</label>
+        <select class="custom-select" id="continent2">
+          <option disabled selected>Select Continent</option>
+          <option disabled value="Africa">Africa</option>
+          <option disabled value="Antartica">Antartica</option>
+          <option disabled value="Asia">Asia</option>
+          <option disabled value="Europe">Europe</option>
+          <option disabled value="North America">North America</option>
+          <option disabled value="Australia">Australia</option>
+          <option disabled value="South America">South America</option>
+        </select>
+      </div>
+    </div>
+  </form>
+</div>
+
+<select id="negara">
+  <option value="" selected>Select region</option>
+    <option value="1">Region 1</option>
+    <option value="2">Region 2</option>
+    <option value="3">Region 3</option>
+  </select>
+  
+  <select id="kota">
+  <option value="">Select City</option>
+    <option value="1">City1</option>
+    <option value="1">City1</option>
+    <option value="1">City1</option>
+    <option value="2">City2</option>
+    <option value="2">City2</option>
+    <option value="3">City3</option>
+    <option value="2">City2</option>
+    <option value="3">City3</option>
+    <option value="1">City1</option>
+  </select>
+  
+  <select id="barangay">
+  <option value="">Select barangay</option>
+    <option value="city1">barangay1</option>
+    <option value="city2">barangay1city2</option>
+    <option value="city3">barangay1city3</option>
+    <option value="city3">barangay1city3</option>
+    <option value="city3">barangay1city3</option>
+    <option value="city1">barangay1city1</option>
+    <option value="city1">barangay1city1</option>
+    <option value="city1">barangay1city1</option>
+    <option value="city1">barangay1city1</option>
+  </select>
+
+  
+<script>
+  $("#country").on("change", function() {
+//get continent
+var originLocationRegion = $(this).find(":selected").data("originAja");
+
+//select continent correctly with prop
+$('#continent option[value="' + originLocationRegion + '"]').prop('selected', true);
+});
+
+
+
+$("#country2").on("change", function() {
+//get continent
+var originLocationRegion = $(this).find(":selected").data("origin-region");
+
+//select continent wrongly with attr
+$('#continent2 option[value="' + originLocationRegion + '"]').attr('selected', true);
+});
+
+
+
+
+
+// its okay i think
+$("#negara").change(function(){
+	var val=$(this).val();
+	$("#Kota option").hide();
+  $("#Kota").val("");
+	$("#Kota option[value='"+val+"']").show();
+  $("#Kota").change();
+});
+
+$("#Kota").change(function(){
+	var val=$(this).val();
+	$("#barangay option").hide();
+  $("#barangay").val("");
+	$("#barangay option[value='city"+val+"']").show();
+});
+
+</script>
